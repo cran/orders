@@ -1,0 +1,14 @@
+0491abdebfaa9a6a420f38cf40f3f4d6 *DESCRIPTION
+86e373ec30024e7a10d5b8267d3f62aa *NAMESPACE
+37418a75fe9240d6d03b85c0e376149c *R/order_beg.R
+f4085b91e2e7b1131dbe418c936a0565 *R/order_betaexpg.R
+a5b8cb7f5e010712dc4734cc9d2e2e23 *R/order_betag.R
+4d6e7c3629efea8a6c23088f0b7ccfeb *R/order_eepg.R
+faa3b4b842e9ee81261b6f1207f45eb2 *R/order_eg.R
+f8141d57b1663d919afc4254ab04dd1d *R/order_expg.R
+eb08e014931cbf22ede3b016691e7c4c *man/order_beg.Rd
+a0478e14e270850bf2544cfc14e2c26d *man/order_betaexpg.Rd
+057906e826d245fc16d56b606226b80d *man/order_betag.Rd
+c66bb1591572c5dce64f4bcbd320411c *man/order_eepg.Rd
+7dda0d27331e467b96e2e26ab21ff6c6 *man/order_eg.Rd
+4043f2bf0c6d7f413cd2a818d2909727 *man/order_expg.Rd
