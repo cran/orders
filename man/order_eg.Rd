@@ -4,12 +4,12 @@
 \alias{order_eg}
 \title{Random Sampling of Order Statistics from a Exponentiated Generalized G Distribution}
 \usage{
-order_eg(size, spec, a, b, k, n)
+order_eg(size, spec, a, b, k, n, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm".}
+\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".}
 
 \item{a}{numeric, represents the first shape parameter. Default value is 1.}
 
@@ -18,20 +18,30 @@ order_eg(size, spec, a, b, k, n)
 \item{k}{numeric, represents the Kth smallest value from a sample.}
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
+
+\item{...}{represents others parameters of the G distribution.}
+}
+\value{
+A list with a random sample of order statistics from a Exponentiated Generalized G Distribution and the value of its join probability density function evaluated in the random sample.
 }
 \description{
 \code{order_eg} is used to obtain a random sample of order statistics from a Exponentiated Generalized G Distribution.
 }
 \examples{
 library(orders)
+# A sample of size 10 of order statistics from a Exponentiated Generalized Exponential Distribution
 order_eg(10,"exp",1,1,1,50)
+# A sample of size 10 of order statistics from a Exponentiated Generalized Normal Distribution
 order_eg(10,"norm",1,1,1,50)
-order_eg(10,"norm",1,1,1,50)
+# A sample of size 10 of order statistics from a Exponentiated Generalized Log-normal Distribution
+order_eg(10,"lnorm",1,1,1,50)
+# A sample of size 10 of order statistics from a Exponentiated Generalized Chi-square Distribution
+order_eg(10,"chisq",1,1,1,50,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
 
-Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statiscal Software.
+Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statistical Software.
 }
 \author{
 Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.

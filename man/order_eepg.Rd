@@ -4,34 +4,44 @@
 \alias{order_eepg}
 \title{Random Sampling of Order Statistics from a Exponentiated Exponential Poisson G Distribution}
 \usage{
-order_eepg(size, spec, lambda, a, k, n)
+order_eepg(size, spec, lambda, a, k, n, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm".}
+\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".}
 
 \item{lambda}{numeric, represents a scale parameter. Default value is 1.}
 
 \item{a}{numeric, represents the shape parameter. Default value is 1.}
 
-\item{k}{numeric, represents the error bound of the approximation of P(t). Default values is 0.01.}
+\item{k}{numeric, represents the Kth smallest value from a sample.}
 
-\item{n}{numeric, represents the error bound of the approximation of P(t). Default values is 0.01.}
+\item{n}{numeric, represents the size of the sample to compute the order statistic from.}
+
+\item{...}{represents others parameters of the G distribution.}
+}
+\value{
+A list with a random sample of order statistics from a Exponentiated Exponential Poisson G Distribution and the value of its join probability density function evaluated in the random sample.
 }
 \description{
 \code{order_eepg} is used to obtain a random sample of order statistics from a Exponentiated Exponential Poisson G Distribution.
 }
 \examples{
 library(orders)
+# A sample of order statistics from a Exponentiated Exponential Poisson Exponential Distribution
 order_eepg(10,"exp",1,1,1,50)
+# A sample of order statistics from a Exponentiated Exponential Poisson Normal Distribution
 order_eepg(10,"norm",1,1,1,50)
-order_eepg(10,"norm",1,1,1,50)
+# A sample of order statistics from a Exponentiated Exponential Poisson Log-normal Distribution
+order_eepg(10,"lnorm",1,1,1,50)
+# A sample of order statistics from a Exponentiated Exponential Poisson Chi-square Distribution
+order_eepg(10,"chisq",1,1,1,50,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
 
-Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statiscal Software.
+Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statistical Software.
 }
 \author{
 Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.

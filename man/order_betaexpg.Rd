@@ -4,12 +4,12 @@
 \alias{order_betaexpg}
 \title{Random Sampling of Order Statistics from a Beta Exponential G Distribution}
 \usage{
-order_betaexpg(size, spec, lambda, a, b, k, n)
+order_betaexpg(size, spec, lambda, a, b, k, n, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm".}
+\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".}
 
 \item{lambda}{numeric, represents the first shape parameter. Default value is 1.}
 
@@ -20,20 +20,30 @@ order_betaexpg(size, spec, lambda, a, b, k, n)
 \item{k}{numeric, represents the Kth smallest value from a sample.}
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
+
+\item{...}{represents others parameters of the G distribution.}
+}
+\value{
+A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample.
 }
 \description{
 \code{order_betaexpg} is used to obtain a random sample of order statistics from a Beta Exponential G Distribution.
 }
 \examples{
 library(orders)
+# A sample of order statistics from a Beta Exp Exponential Distribution
 order_betaexpg(10,"exp",1,1,1,1,50)
+# A sample of order statistics from a Beta Exp Normal Distribution
 order_betaexpg(10,"norm",1,1,1,1,50)
+# A sample of order statistics from a Beta Exp Log-normal Distribution
 order_betaexpg(10,"lnorm",1,1,1,1,50)
+# A sample of order statistics from a Beta Exp Chi-square  Distribution
+order_betaexpg(10,"chisq",1,1,1,1,50,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
 
-Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statiscal Software.
+Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statistical Software.
 }
 \author{
 Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
