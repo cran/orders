@@ -2,7 +2,7 @@
 #'
 #'\code{order_beg} is used to obtain a random sample of order statistics from a Beta Extended G Distribution.
 #' @param size numeric, represents the size of the sample.
-#' @param spec character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".
+#' @param spec character, represents an specific G distribution. Possible values "norm", "exp","lnorm","chisq".
 #' @param alpha numeric, represents the scale parameter. Default value is 1.
 #' @param a numeric, represents the first shape parameter. Default value is 1.
 #' @param b numeric, represents the second shape parameter. Default value is 1.
@@ -15,14 +15,14 @@
 #' @author Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
 #' @examples
 #' library(orders)
-#' # A sample of size 10 of order statistics from a Beta Extented Exponential Distribution
-#' order_beg(10,"exp",1,1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Extented Normal Distribution
-#' order_beg(10,"norm",1,1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Extented Log-normal Distribution
-#' order_beg(10,"lnorm",1,1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Extented Chis-square Distribution
-#' order_beg(10,"chisq",1,1,1,1,50,df=3)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Extented Exponential Distribution
+#' order_beg(10,"exp",1,1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Extented Normal Distribution
+#' order_beg(10,"norm",1,1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Extented Log-normal Distribution
+#' order_beg(10,"lnorm",1,1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Extented Chis-square Distribution
+#' order_beg(10,"chisq",1,1,1,k=3,50,df=3)
 #' @importFrom Newdistns qbeg dbeg
 #' @importFrom stats rbeta
 #' @export order_beg

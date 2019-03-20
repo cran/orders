@@ -2,7 +2,7 @@
 #'
 #'\code{order_betag} is used to obtain a random sample of order statistics from a Beta G Distribution.
 #' @param size numeric, represents the size of the sample.
-#' @param spec character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".
+#' @param spec character, represents an specific G distribution. Possible values "norm", "exp","lnorm","chisq".
 #' @param a numeric, represents the first shape parameter. Default value is 1.
 #' @param b numeric, represents the first shape parameter. Default value is 1.
 #' @param k numeric, represents the Kth smallest value from a sample.
@@ -14,14 +14,14 @@
 #' @author Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
 #' @examples
 #' library(orders)
-#' # A sample of size 10 of order statistics from a Beta Exponential Distribution
-#' order_betag(10,"exp",1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Normal Distribution
-#' order_betag(10,"norm",1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Log-normal Distribution
-#' order_betag(10,"lnorm",1,1,1,50)
-#' # A sample of size 10 of order statistics from a Beta Chis-square Distribution
-#' order_betag(10,"chisq",1,1,1,50,df=3)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Exponential Distribution
+#' order_betag(10,"exp",1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Normal Distribution
+#' order_betag(10,"norm",1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Log-normal Distribution
+#' order_betag(10,"lnorm",1,1,k=3,50)
+#' # A sample of size 10 of the 3-th order statistics from a Beta Chis-square Distribution
+#' order_betag(10,"chisq",1,1,k=3,50,df=3)
 #' @importFrom Newdistns qbetag dbetag
 #' @importFrom stats rbeta
 #' @export order_betag

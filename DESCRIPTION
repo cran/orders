@@ -1,7 +1,7 @@
 Package: orders
 Type: Package
 Title: Sampling from Order Statistics of New Families of Distributions
-Version: 0.1.1
+Version: 0.1.2
 Author: Carlos Alberto Cardozo Delgado
 Maintainer: Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>
 Description: Set of tools to generate samples of order statistics from new families of distributions. 
@@ -17,6 +17,6 @@ LazyData: true
 RoxygenNote: 6.1.0
 Imports: Newdistns
 NeedsCompilation: no
-Packaged: 2019-02-25 10:16:42 UTC; Carlos
+Packaged: 2019-03-19 23:12:24 UTC; Carlos
 Repository: CRAN
-Date/Publication: 2019-02-25 11:10:04 UTC
+Date/Publication: 2019-03-20 20:50:04 UTC

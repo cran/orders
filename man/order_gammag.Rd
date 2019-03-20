@@ -9,7 +9,7 @@ order_gammag(size, spec, a, k, n, ...)
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{spec}{character, represents an specific distribution. Possible values "norm", "exp","lnorm","chisq".}
+\item{spec}{character, represents an specific G distribution. Possible values "norm", "exp","lnorm","chisq".}
 
 \item{a}{numeric, represents the first shape parameter. Default value is 1.}
 
@@ -23,18 +23,18 @@ order_gammag(size, spec, a, k, n, ...)
 A list with a random sample of order statistics from a Gamma Uniform G Distribution and the value of its join probability density function evaluated in the random sample.
 }
 \description{
-\code{order_eg} is used to obtain a random sample of order statistics from a Gamma Uniform G Distribution.
+\code{order_gammag} is used to obtain a random sample of order statistics from a Gamma Uniform G Distribution.
 }
 \examples{
 library(orders)
-# A sample of size 10 of order statistics from a Gamma Uniform Exponential Distribution
-order_gammag(10,"exp",1,1,50)
-# A sample of size 10 of order statistics from a Gamma Uniform Normal Distribution
-order_gammag(10,"norm",1,1,50)
-# A sample of size 10 of order statistics from a Gamma Uniform Log-normal Distribution
-order_gammag(10,"lnorm",1,1,50)
-# A sample of size 10 of order statistics from a Gamma Uniform Chi-square Distribution
-order_gammag(10,"chisq",1,1,50,df=3)
+# A sample of size 10 of the 3-th order statistics from a Gamma Uniform Exponential Distribution
+order_gammag(10,"exp",1,k=3,50)
+# A sample of size 10 of the 3-th order statistics from a Gamma Uniform Normal Distribution
+order_gammag(10,"norm",1,k=3,50)
+# A sample of size 10 of the 3-th order statistics from a Gamma Uniform Log-normal Distribution
+order_gammag(10,"lnorm",1,k=3,50)
+# A sample of size 10 of the 3-th order statistics from a Gamma Uniform Chi-square Distribution
+order_gammag(10,"chisq",1,k=3,50,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
