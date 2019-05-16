@@ -1,5 +1,5 @@
-1089e1f7e8a34261530c276cce3032b7 *DESCRIPTION
-ec65c64e865c6469a2adab5cfed5e136 *NAMESPACE
+80972d218284704c324bcbd5da890785 *DESCRIPTION
+94ca500d9de704be28b5b38e24382649 *NAMESPACE
 b3c925bbb9b12e9312e871fd87ecb003 *R/order_beg.R
 ded02de8ed6b9e974faf780110360c68 *R/order_betaexpg.R
 b93ca88ea601c64ec78e1a59194245ec *R/order_betag.R
@@ -8,6 +8,13 @@ d41897e5e09ec284ad3c505a4028d7bb *R/order_eg.R
 2cb79f9ed8ff73b53140e8c8f41bc1d4 *R/order_expg.R
 61fd8eab3120bca254fdb7cf7b466de4 *R/order_expkumg.R
 57cf17a18c15fa4fa6920c9db899ecd7 *R/order_gammag.R
+de3cd206d1c2f13e3eb6a86c0b0ce7c0 *R/order_gammag1.R
+9529d35b84a454a7352cdc2ce6cb9df1 *R/order_gammag2.R
+b546e375a3c7f15a498564ff64bc9f48 *R/order_gbg.R
+6e82280abb8c8901d12d971721a8032c *R/order_kumg.R
+05462b71be726c1c62de339d06080652 *R/order_loggammag1.R
+5e45abcd277d2f2bffd7f73cb05c4de5 *R/order_loggammag2.R
+91becd35add41fee50a69086879c004d *R/order_mbetag.R
 246acbd628374a86aa3b5a13946820a8 *R/order_mog.R
 c0b70888ffb81c1c825000f7ae866275 *R/order_tessg.R
 2ab6daeb289733afa660b74d0f757bcd *R/order_weibullg.R
@@ -19,6 +26,13 @@ c19ee6e6c69474722d6997f12e759672 *man/order_betag.Rd
 0859b0fb55b221c74a8378c71c9828ce *man/order_expg.Rd
 c3099f25dc657375cc6ab29abb2615fd *man/order_expkumg.Rd
 dcd2071368a25b59e338111ea88127a1 *man/order_gammag.Rd
+3ffcff16bc4673ab650cffcf6b322b35 *man/order_gammag1.Rd
+fde373210ce41fc93a220beaba83776e *man/order_gammag2.Rd
+aefff13cf9f6c372910961c0636de840 *man/order_gbg.Rd
+631e1b659b641f10749a3a4ae72e56da *man/order_kumg.Rd
+87b32f69d237f14ee0cec4a961feb3a7 *man/order_loggammag1.Rd
+96d3da0373e7c5b3ef9e5daec64100ae *man/order_loggammag2.Rd
+144704f646011ecbc6dd50c8dbdaa0ee *man/order_mbetag.Rd
 3219ce0995af200353055e195a7d9385 *man/order_mog.Rd
 66f59fc32a20b9cac7bf48bf4fa03272 *man/order_tessg.Rd
 e085d959dc6ba1ed2959d131695ae455 *man/order_weibullg.Rd
