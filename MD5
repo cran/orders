@@ -1,5 +1,5 @@
-80972d218284704c324bcbd5da890785 *DESCRIPTION
-94ca500d9de704be28b5b38e24382649 *NAMESPACE
+57128904ec7ea79439f2b07839b62183 *DESCRIPTION
+a671454fed82022314d6faf723cd4733 *NAMESPACE
 b3c925bbb9b12e9312e871fd87ecb003 *R/order_beg.R
 ded02de8ed6b9e974faf780110360c68 *R/order_betaexpg.R
 b93ca88ea601c64ec78e1a59194245ec *R/order_betag.R
@@ -16,8 +16,14 @@ b546e375a3c7f15a498564ff64bc9f48 *R/order_gbg.R
 5e45abcd277d2f2bffd7f73cb05c4de5 *R/order_loggammag2.R
 91becd35add41fee50a69086879c004d *R/order_mbetag.R
 246acbd628374a86aa3b5a13946820a8 *R/order_mog.R
+852da59ca9aa5b898939491a32bafe81 *R/order_pig.R
+c32ed1704f49cfde2c6df3a2ad1bf7bb *R/order_sichel.R
+3ce09e7fa8ead847cd692142eddb00d4 *R/order_sinharcsinh.R
+91f355e41bafc332d2465fada9f29b8f *R/order_snormal1.R
+cfc07c4084e2c975e8387d3bccb680ee *R/order_sstudentt.R
 c0b70888ffb81c1c825000f7ae866275 *R/order_tessg.R
 2ab6daeb289733afa660b74d0f757bcd *R/order_weibullg.R
+64604d51f5a56083ff0c9a173cb2032a *R/order_zip.R
 4fef8a4061feaf20acae7b635554952a *man/order_beg.Rd
 99870834c35f07db9659d72637e5755a *man/order_betaexpg.Rd
 c19ee6e6c69474722d6997f12e759672 *man/order_betag.Rd
@@ -34,5 +40,11 @@ aefff13cf9f6c372910961c0636de840 *man/order_gbg.Rd
 96d3da0373e7c5b3ef9e5daec64100ae *man/order_loggammag2.Rd
 144704f646011ecbc6dd50c8dbdaa0ee *man/order_mbetag.Rd
 3219ce0995af200353055e195a7d9385 *man/order_mog.Rd
+cdda42fed4ee82a994fcb1bb16b7a076 *man/order_pig.Rd
+d5d511f1cf4382b9029124a7de88539e *man/order_sichel.Rd
+0aaa58ee13f446f39d1d40911b1b0aaf *man/order_sinharcsinh.Rd
+13a74fa8d06440ca690df91b6a906578 *man/order_snormal1.Rd
+394cfc4f2d1182b6c9ad23a743cfcd86 *man/order_sstudentt.Rd
 66f59fc32a20b9cac7bf48bf4fa03272 *man/order_tessg.Rd
 e085d959dc6ba1ed2959d131695ae455 *man/order_weibullg.Rd
+ee73fa564c839e70b273711daa244cbb *man/order_zip.Rd
