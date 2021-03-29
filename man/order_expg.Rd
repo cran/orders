@@ -2,9 +2,9 @@
 % Please edit documentation in R/order_expg.R
 \name{order_expg}
 \alias{order_expg}
-\title{Random Sampling of Order Statistics from a Exponentiated G Distribution}
+\title{Random Sampling of k-th Order Statistics from a Exponentiated G Distribution}
 \usage{
-order_expg(size, spec, a, k, n, ...)
+order_expg(size, spec, a, k, n, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -17,18 +17,21 @@ order_expg(size, spec, a, k, n, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+
 \item{...}{represents others parameters of the G distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Exponentiated G Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Exponentiated G Distribution, the value of its join probability density function evaluated in the random sample
+a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
 }
 \description{
-\code{order_expg} is used to obtain a random sample of order statistics from a Exponentiated G Distribution.
+\code{order_expg} is used to obtain a random sample of the k-th order statistic from a Exponentiated G Distribution.
 }
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Exponentiated Exponential Distribution
-order_expg(10,"exp",1,k=3,50)
+order_expg(10,"exp",1,k=3,50,alpha=0.02)
 # A sample of size 10 of the 3-th order statistics from a Exponentiated Normal Distribution
 order_expg(10,"norm",1,k=3,50)
 # A sample of size 10 of the 3-th order statistics from a Exponentiated Log-normal Distribution

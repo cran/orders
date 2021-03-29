@@ -1,6 +1,6 @@
-#' Random Sampling of Order Statistics from a Beta Exponential G Distribution
+#' Random Sampling of k-th Order Statistics from a Beta Exponential G Distribution
 #'
-#'\code{order_betaexpg} is used to obtain a random sample of order statistics from a Beta Exponential G Distribution.
+#'\code{order_betaexpg} is used to obtain a random sample of the k-th order statistic from a Beta Exponential G Distribution.
 #' @param size numeric, represents the size of the sample.
 #' @param spec character, represents an specific G distribution. Possible values "norm", "exp","lnorm","chisq".
 #' @param lambda numeric, represents the first shape parameter. Default value is 1.
@@ -8,6 +8,7 @@
 #' @param b numeric, represents the third shape parameter. Default value is 1.
 #' @param k numeric, represents the Kth smallest value from a sample.
 #' @param n numeric, represents the size of the sample to compute the order statistic from.
+#' @param alpha numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.
 #' @param ... represents others parameters of the G distribution.
 #' @return A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample.
 #' @references Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
@@ -17,7 +18,7 @@
 #' library(orders)
 #' # A sample of size 10 of the 3-th order statistics from
 #' # a Beta Exponential Exponential Distribution
-#' order_betaexpg(10,"exp",1,1,1,k=3,50)
+#' order_betaexpg(10,"exp",1,1,1,k=3,50,alpha=0.02)
 #' # A sample of size 10 of the 3-th order statistics from
 #' # a Beta Exponential Normal Distribution
 #' order_betaexpg(10,"norm",1,1,1,k=3,50)
@@ -31,9 +32,13 @@
 #' @importFrom stats rbeta
 #' @export order_betaexpg
 
-order_betaexpg <- function(size,spec,lambda,a,b,k,n,...){
-  initial      <- rbeta(size, k, n + 1 - k)
-  sample       <- qbetaexpg(initial,spec,lambda,a,b,...)
+order_betaexpg <- function(size,spec,lambda,a,b,k,n,alpha=0.05,...){
+  sample       <- qbetaexpg(initial_order(size,k,n),spec,lambda,a,b,...)
   pdf          <- factorial(size)*cumprod(dbetaexpg(sample,spec,...))[size]
+  if(size>5){
+    return(list(sample=sample,pdf=pdf,ci_median=interval_median(size,sample,alpha)))
+  }
+  cat("---------------------------------------------------------------------------------------------\n")
+  cat("We cannot report the confidence interval. The size of the sample is less or equal than five.\n")
   return(list(sample=sample,pdf=pdf))
 }

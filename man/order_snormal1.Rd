@@ -2,9 +2,9 @@
 % Please edit documentation in R/order_snormal1.R
 \name{order_snormal1}
 \alias{order_snormal1}
-\title{Random Sampling of Order Statistics from a Skew normal type 1 Distribution}
+\title{Random Sampling of k-th Order Statistics from a Skew normal type 1 Distribution}
 \usage{
-order_snormal1(size, k, mu, sigma, nu, tau, n, ...)
+order_snormal1(size, k, mu, sigma, nu, tau, n, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -21,18 +21,21 @@ order_snormal1(size, k, mu, sigma, nu, tau, n, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+
 \item{...}{represents others parameters of a Skew normal type 1 distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Skew normal type 1 Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Skew normal type 1 Distribution, the value of its join probability density function evaluated in the random sample and
+a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
 }
 \description{
-\code{order_snormal1} is used to obtain a random sample of order statistics from a Skew normal type 1 Distribution.
+\code{order_snormal1} is used to obtain a random sample of the k-th order statistic from a Skew normal type 1 distribution and some associated quantities of interest.
 }
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Skew normal type 1 Distribution
-order_snormal1(size=10,mu=0,sigma=1,nu=0,tau=2,k=3,n=50)
+order_snormal1(size=10,mu=0,sigma=1,nu=0,tau=2,k=3,n=50,alpha=0.02)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

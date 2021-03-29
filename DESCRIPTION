@@ -1,7 +1,8 @@
 Package: orders
 Type: Package
-Title: Sampling from Order Statistics of New Families of Distributions
-Version: 0.1.4
+Title: Sampling from k-th Order Statistics of New Families of
+        Distributions
+Version: 0.1.5
 Author: Carlos Alberto Cardozo Delgado
 Maintainer: Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>
 Description: Set of tools to generate samples of order statistics and others quantities of interest from new families of distributions. 
@@ -14,10 +15,10 @@ Description: Set of tools to generate samples of order statistics and others qua
     and exponentiated exponential Poisson G distributions, Poisson-inverse gaussian distribution, Skew normal type 1 distributions, Skew student t distribution, Sinh-Arcsinh distribution, Sichel distribution and Zero inflated Poisson. 
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 RoxygenNote: 7.1.1
 Imports: Newdistns, gamlss.dist
 NeedsCompilation: no
-Packaged: 2020-09-24 10:57:18 UTC; Carlos
+Packaged: 2021-03-29 12:56:30 UTC; CARLOS
 Repository: CRAN
-Date/Publication: 2020-09-24 12:00:06 UTC
+Date/Publication: 2021-03-29 13:50:02 UTC

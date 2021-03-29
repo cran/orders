@@ -2,9 +2,9 @@
 % Please edit documentation in R/order_zip.R
 \name{order_zip}
 \alias{order_zip}
-\title{Random Sampling of Order Statistics from a Zero Inflated Poisson Distribution}
+\title{Random Sampling of k-th Order Statistics from a Zero Inflated Poisson Distribution}
 \usage{
-order_zip(size, k, mu, sigma, n, ...)
+order_zip(size, k, mu, sigma, n, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -17,18 +17,21 @@ order_zip(size, k, mu, sigma, n, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+
 \item{...}{represents others parameters of a Zero Inflated Poisson distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Zero Inflated Poisson Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Zero Inflated Poisson Distribution, the value of its join probability density function evaluated in the random sample and
+a (1 - alpha) confidence interval for the population median of the k-th order statistic.
 }
 \description{
-\code{order_zip} is used to obtain a random sample of order statistics from a Zero Inflated Poisson Distribution.
+\code{order_zip} is used to obtain a random sample of the k-th order statistic from a Zero Inflated Poisson distribution and some associated quantities of interest.
 }
 \examples{
 library(orders)
-# A sample of size 10 of the 3-th order statistics from a Zero Inflated Poisson Distribution
-order_zip(size=10,k=3,mu=5,sigma=0.1,n=30)
+# A sample of size 20 of the 5-th order statistics from a Zero Inflated Poisson Distribution
+#order_zip(size=10,k=5,mu=5,sigma=0.1,n=30)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

@@ -2,9 +2,9 @@
 % Please edit documentation in R/order_sinharcsinh.R
 \name{order_sinharcsinh}
 \alias{order_sinharcsinh}
-\title{Random Sampling of Order Statistics from a Sinh-Arcsinh Distribution}
+\title{Random Sampling of k-th Order Statistics from a Sinh-Arcsinh Distribution}
 \usage{
-order_sinharcsinh(size, k, mu, sigma, nu, tau, n, ...)
+order_sinharcsinh(size, k, mu, sigma, nu, tau, n, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -21,18 +21,21 @@ order_sinharcsinh(size, k, mu, sigma, nu, tau, n, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+
 \item{...}{represents others parameters of a Sinh-Arcsinh distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Sinh-Arcsinh Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Sinh-Arcsinh Distribution, the value of its join probability density function evaluated in the random sample and
+a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
 }
 \description{
-\code{order_sinharcsinh} is used to obtain a random sample of order statistics from a Sinh-Arcsinh Distribution.
+\code{order_sinharcsinh} is used to obtain a random sample of the k-th order statistic from a Sinh-Arcsinh Distribution and some associated quantities of interest.
 }
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Sinh-Arcsinh Distribution
-order_sinharcsinh(size=10,k=3,mu=0,sigma=1,nu=1,tau=2,n=30)
+order_sinharcsinh(size=10,k=3,mu=0,sigma=1,nu=1,tau=2,n=30,alpha=0.02)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

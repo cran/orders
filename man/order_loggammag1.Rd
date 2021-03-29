@@ -2,9 +2,9 @@
 % Please edit documentation in R/order_loggammag1.R
 \name{order_loggammag1}
 \alias{order_loggammag1}
-\title{Random Sampling of Order Statistics from a Log Gamma G I Distribution}
+\title{Random Sampling of k-th Order Statistics from a Log Gamma G I Distribution}
 \usage{
-order_loggammag1(size, spec, a, b, k, n, ...)
+order_loggammag1(size, spec, a, b, k, n, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -19,19 +19,22 @@ order_loggammag1(size, spec, a, b, k, n, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+
 \item{...}{represents others parameters of the G distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Log Gamma G I Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Log Gamma G I Distribution, the value of its join probability density function evaluated in the random sample and
+a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
 }
 \description{
-\code{order_loggammag1} is used to obtain a random sample of order statistics from a Log Gamma G I Distribution.
+\code{order_loggammag1} is used to obtain a random sample of the k-th order statistic from a Log Gamma G I distribution and some associated quantities of interest.
 }
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from
 # a Log Gamma Exponential I Distribution
-order_loggammag1(10,"exp",1,1,k=3,50)
+order_loggammag1(10,"exp",1,1,k=3,50,alpha=0.02)
 # A sample of size 10 of the 3-th order statistics from
 # a Log Gamma Normal I Distribution
 order_loggammag1(10,"norm",1,1,k=3,50)
