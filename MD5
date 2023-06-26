@@ -1,10 +1,12 @@
-4bd7c3bca1b0020c4be7aea5cbdaa873 *DESCRIPTION
-8204238ea5da7ac007ffbaa78ac671c5 *NAMESPACE
+dc114370e7a624593f9ea540ecfa12b9 *DESCRIPTION
+e153cc9e75e11f579711e29650b12b97 *NAMESPACE
 616f8e24c0b6dcbdb7fa72b4c3a4036f *R/aux_func.R
 0d0a8afc8d49db345b358c37a2442d03 *R/order_beg.R
+903ecd4c128d230572afee6bcd62e277 *R/order_benini.R
 09a27caf27beff27705ef12649f8ed2f *R/order_betaexpg.R
 f4fe6deea64de08e48156dad53a7bda7 *R/order_betag.R
 09013a700d03955b527ace63e6c589b6 *R/order_burr.R
+61c4f8f67f1887a2f0a4c94c38396b0f *R/order_dagum.R
 e34e131360d1767498ee8a2a5d9297d8 *R/order_eepg.R
 3609212e2e5689258b51715bde753a7d *R/order_eg.R
 0d3f655eb9bb1951eb7ea6a6beaf0e02 *R/order_expg.R
@@ -15,6 +17,7 @@ c1f251b0e0637b0629159cdc5a0256e1 *R/order_fellerpareto.R
 eae679dc623dbbdee98def30b3941132 *R/order_gammag2.R
 883c4bafdf72b1ad2efbd7f06a53c18a *R/order_gbg.R
 7c98044770cbb4a069cd0d435c245da3 *R/order_gpareto.R
+e2a504a12ec7095ae473202921319e2d *R/order_invpareto.R
 cdf2c5cc94de4c11a3748d21d7a6a9f6 *R/order_iparalogistic.R
 dcbcad8f792de1973d7a72eb309cc0f7 *R/order_kumg.R
 2bbe791ee2cb784e8ccfcec43617b572 *R/order_loggammag1.R
@@ -24,15 +27,18 @@ b76b3ebd3a47cd68f1c37efd00ec492e *R/order_loggammag2.R
 d1fddf296fd1aba4a739f052e96951f8 *R/order_pig.R
 1b058eef68fbb125b3b294a1b8dd39b6 *R/order_sichel.R
 f3d5fbf2982eb5f33edde83fc1bdb3a7 *R/order_sinharcsinh.R
+22067b4c14466097965ef0bbf3dc4d74 *R/order_sm.R
 b9ee77eec4ec112ea0daef86ee8bbba7 *R/order_snormal1.R
 235b02a9ffa4b88757185053c598b7f6 *R/order_sstudentt.R
 9bb3e60ec8f0fc8fc4a7a997fd12632c *R/order_tessg.R
 871be9407f2d620c72a5519088015569 *R/order_weibullg.R
 2ab519c760ff8c722f5c20436cf95391 *R/order_zip.R
 00abcd37eff3c0a059ceb9be6c2c4194 *man/order_beg.Rd
+b9546fff33b2af252ae6390597fc5941 *man/order_benini.Rd
 e26e3b7941c388811fb717d72d4a3085 *man/order_betaexpg.Rd
 4569b4d80f61864b6ea19dc532236a8e *man/order_betag.Rd
 9c53d702d85fa001335ee81476ec0390 *man/order_burr.Rd
+6929f0a30d63f1a978c9f0cc9ad9a043 *man/order_dagum.Rd
 bc04ef3d6ce43d9eea047c25d5bc0e8f *man/order_eepg.Rd
 f26d873f9dad450db73922380e78fa2c *man/order_eg.Rd
 ef5ca4aaee8185e4ce99c33afcffaf62 *man/order_expg.Rd
@@ -43,6 +49,7 @@ c63ce87b3c2f29f0497980b8fb3e20ae *man/order_fellerpareto.Rd
 ab150038ba8864025e185ff603a7bf33 *man/order_gammag2.Rd
 7563400f4ed9a3f86188e80cf651a654 *man/order_gbg.Rd
 e292866ec0669f36adb31a70e9f8df52 *man/order_gpareto.Rd
+2f7bc84eb4511a3c4c1ae6d318e7743e *man/order_invpareto.Rd
 69e5be29f75c4804073be5305c1f74f0 *man/order_iparalogistic.Rd
 de2d6bcb5fe1776caeb9c855a48f9a99 *man/order_kumg.Rd
 e615cc51e0d4d5bcd138ef275cce0204 *man/order_loggammag1.Rd
@@ -52,6 +59,7 @@ a3e314fab3476540d5d4e981a14a925a *man/order_mbetag.Rd
 c3102cb7075c46f24dabcf0f49dd6260 *man/order_pig.Rd
 097298f837b75e0ab563e16ba1d353af *man/order_sichel.Rd
 c2d21a01a62e206c0a0405f970c023ac *man/order_sinharcsinh.Rd
+4d6e6b0fd6ffe76206ed687c234e5e3b *man/order_sm.Rd
 3fc9c5fa78fac81ccc6c9faf6707a1ff *man/order_snormal1.Rd
 7673dcf283d8abba61dbb589164f5c32 *man/order_sstudentt.Rd
 962c9e136af9d3b73a5f653be657ae9c *man/order_tessg.Rd
