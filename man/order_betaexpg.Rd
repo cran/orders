@@ -4,7 +4,7 @@
 \alias{order_betaexpg}
 \title{Random Sampling of k-th Order Statistics from a Beta Exponential G Distribution}
 \usage{
-order_betaexpg(size, spec, lambda, a, b, k, n, alpha = 0.05, ...)
+order_betaexpg(size, spec, lambda, a, b, k, n, p = 0.5, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -17,16 +17,19 @@ order_betaexpg(size, spec, lambda, a, b, k, n, alpha = 0.05, ...)
 
 \item{b}{numeric, represents the third shape parameter. Default value is 1.}
 
-\item{k}{numeric, represents the Kth smallest value from a sample.}
+\item{k}{numeric, represents the k-th smallest value from a sample.}
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
-\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+\item{p}{numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.}
+
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of the distribution of the k-th order statistic. Default value is 0.05.}
 
 \item{...}{represents others parameters of the G distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample.
+A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample
+and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 }
 \description{
 \code{order_betaexpg} is used to obtain a random sample of the k-th order statistic from a Beta Exponential G Distribution.

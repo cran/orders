@@ -2,7 +2,7 @@ Package: orders
 Type: Package
 Title: Sampling from k-th Order Statistics of New Families of
         Distributions
-Version: 0.1.7
+Version: 0.1.8
 Author: Carlos Alberto Cardozo Delgado
 Maintainer: Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>
 Description: Set of tools to generate samples of k-th order statistics and others quantities of interest from new families of distributions. 
@@ -18,6 +18,6 @@ Encoding: UTF-8
 RoxygenNote: 7.2.3
 Imports: Newdistns, gamlss.dist, actuar, VGAM
 NeedsCompilation: no
-Packaged: 2023-06-25 21:41:27 UTC; CARLOS
+Packaged: 2023-11-13 23:48:08 UTC; CARLOS
 Repository: CRAN
-Date/Publication: 2023-06-26 08:30:05 UTC
+Date/Publication: 2023-11-14 01:23:20 UTC

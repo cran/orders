@@ -1,8 +1,15 @@
-#' @importFrom stats qbinom rbeta
+#' @importFrom stats qbinom rbeta pbinom
 
-interval_median <- function(size,sample,alpha){
-  output <- sort(sample)[qbinom(c(alpha/2,1-alpha/2),size,0.5)]
-  return(output)
+point_percentile_est <- function(p,size,sample){
+  sort_sample <- sort(sample)
+  point_est <- sort_sample[floor((size+1)*p)]
+  return(point_est)
+}
+
+interval_percentile_est <- function(p,size,sample,alpha){
+  interval <- sort(sample)[qbinom(c(alpha/2,1-(alpha/2)),size,prob=p)]
+  approx_p <- pbinom(qbinom(1-(alpha/2),size,prob=p),size,p) - pbinom(qbinom(alpha/2,size,prob=p),size,p)
+  return(c(interval,approx_p))
 }
 
 initial_order <- function(size,k,n){return(rbeta(size, k, n + 1 - k))}

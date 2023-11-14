@@ -4,7 +4,7 @@
 \alias{order_weibullg}
 \title{Random Sampling of k-th Order Statistics from a Weibull G Distribution}
 \usage{
-order_weibullg(size, spec, beta, c, k, n, alpha = 0.02, ...)
+order_weibullg(size, spec, beta, c, k, n, p = 0.5, alpha = 0.02, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -15,17 +15,19 @@ order_weibullg(size, spec, beta, c, k, n, alpha = 0.02, ...)
 
 \item{c}{numeric, represents the shape parameter. Default value is 1.}
 
-\item{k}{numeric, represents the Kth smallest value from a sample.}
+\item{k}{numeric, represents the k-th smallest value from a sample.}
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
-\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+\item{p}{numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.}
+
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of the distribution of the k-th order statistic. Default value is 0.05.}
 
 \item{...}{represents others parameters of the G distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Weibull G Distribution, the value of its join probability density function evaluated in the random sample and
-a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic..
+A list with a random sample of order statistics from a Weibull G Distribution, the value of its join probability density function evaluated in the random sample
+and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 }
 \description{
 \code{order_weibullg} is used to obtain a random sample of the k-th order statistic from a Weibull G distribution.
@@ -33,13 +35,13 @@ a (1 - alpha) confidence interval for the population median of the distribution 
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Weibull Exponential Distribution
-order_weibullg(10,"exp",beta=1,c=1,k=3,n=50,alpha=0.02)
+order_weibullg(10,"exp",beta=1,c=1,k=3,n=50,p=0.5,alpha=0.02)
 # A sample of size 10 of the 3-th order statistics from a Weibull Normal Distribution
-order_weibullg(10,"norm",beta=1,c=1,k=3,n=50)
+order_weibullg(10,"norm",beta=1,c=1,k=3,n=50,p=0.5)
 # A sample of size 10 of the 3-th order statistics from a Weibull Log-normal Distribution
-order_weibullg(10,"lnorm",beta=1,c=1,k=3,n=50)
+order_weibullg(10,"lnorm",beta=1,c=1,k=3,n=50,p=0.5)
 # A sample of size 10 of the 3-th order statistics from a Weibull Chi-square Distribution
-order_weibullg(10,"chisq",beta=1,c=1,k=3,n=50,df=3)
+order_weibullg(10,"chisq",beta=1,c=1,k=3,n=50,p=0.5,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

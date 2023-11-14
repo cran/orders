@@ -6,11 +6,13 @@
 #' @param lambda numeric, represents the first shape parameter. Default value is 1.
 #' @param a numeric, represents the second shape parameter. Default value is 1.
 #' @param b numeric, represents the third shape parameter. Default value is 1.
-#' @param k numeric, represents the Kth smallest value from a sample.
+#' @param k numeric, represents the k-th smallest value from a sample.
 #' @param n numeric, represents the size of the sample to compute the order statistic from.
-#' @param alpha numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.
+#' @param p numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.
+#' @param alpha numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of the distribution of the k-th order statistic. Default value is 0.05.
 #' @param ... represents others parameters of the G distribution.
-#' @return A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample.
+#' @return A list with a random sample of order statistics from a Beta Exponential G Distribution and the value of its join probability density function evaluated in the random sample
+#' and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 #' @references Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
 #' @references Naradajah, S. and Rocha, R. (2016) Newdistns: An R Package for New Families of Distributions, Journal of Statistical Software.
 #' @author Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
@@ -32,11 +34,18 @@
 #' @importFrom stats rbeta
 #' @export order_betaexpg
 
-order_betaexpg <- function(size,spec,lambda,a,b,k,n,alpha=0.05,...){
+order_betaexpg <- function(size,spec,lambda,a,b,k,n,p=0.5,alpha=0.05,...){
   sample       <- qbetaexpg(initial_order(size,k,n),spec,lambda,a,b,...)
   pdf          <- factorial(size)*cumprod(dbetaexpg(sample,spec,...))[size]
+  log_pdf     <- sum(log(2:size)) + sum(log(dbetaexpg(sample,spec,...)))
   if(size>5){
-    return(list(sample=sample,pdf=pdf,ci_median=interval_median(size,sample,alpha)))
+    int_perc_est <- interval_percentile_est(p,size,sample,alpha)
+    return(list(sample = sample,
+                pdf = pdf,
+                log_pdf = log_pdf,
+                point_percentile_est = point_percentile_est(p,size,sample),
+                confidence_percentile_est = int_perc_est[1:2],
+                aprox_coverage_prob = int_perc_est[3]))
   }
   cat("---------------------------------------------------------------------------------------------\n")
   cat("We cannot report the confidence interval. The size of the sample is less or equal than five.\n")

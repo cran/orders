@@ -4,7 +4,7 @@
 \alias{order_eg}
 \title{Random Sampling of k-th Order Statistics from a Exponentiated Generalized G Distribution}
 \usage{
-order_eg(size, spec, a, b, k, n, alpha = 0.05, ...)
+order_eg(size, spec, a, b, k, n, p = 0.5, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
@@ -15,17 +15,19 @@ order_eg(size, spec, a, b, k, n, alpha = 0.05, ...)
 
 \item{b}{numeric, represents the second shape parameter. Default value is 1.}
 
-\item{k}{numeric, represents the Kth smallest value from a sample.}
+\item{k}{numeric, represents the k-th smallest value from a sample.}
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
-\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+\item{p}{numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.}
+
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of the distribution of the k-th order statistic. Default value is 0.05.}
 
 \item{...}{represents others parameters of the G distribution.}
 }
 \value{
 A list with a random sample of order statistics from a Exponentiated Generalized G Distribution, the value of its join probability density function evaluated in the random sample
-a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
+and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 }
 \description{
 \code{order_eg} is used to obtain a random sample of k-th order order statistic from a Exponentiated Generalized G Distribution.
@@ -34,16 +36,16 @@ a (1 - alpha) confidence interval for the population median of the distribution 
 library(orders)
 # A sample of size 10 of the 3-th order statistics from
 # a Exponentiated Generalized Exponential Distribution
-order_eg(10,"exp",1,1,k=3,50,alpha=0.02)
+order_eg(10,"exp",1,1,k=3,n=50,p=0.5,alpha=0.02)
 # A sample of size 10 of the 3-th order statistics from
 # a Exponentiated Generalized Normal Distribution
-order_eg(10,"norm",1,1,k=3,50)
+order_eg(10,"norm",1,1,k=3,n=50,p=0.5)
 # A sample of size 10 of the 3-th order statistics from
 # a Exponentiated Generalized Log-normal Distribution
-order_eg(10,"lnorm",1,1,k=3,50)
+order_eg(10,"lnorm",1,1,k=3,n=50,p=0.5)
 # A sample of size 10 of the 3-th order statistics from
 # a Exponentiated Generalized Chi-square Distribution
-order_eg(10,"chisq",1,1,k=3,50,df=3)
+order_eg(10,"chisq",1,1,k=3,n=50,p=0.5,df=3)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

@@ -13,6 +13,7 @@ order_fellerpareto(
   shape3,
   scale,
   n,
+  p = 0.5,
   alpha = 0.05,
   ...
 )
@@ -20,7 +21,7 @@ order_fellerpareto(
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{k}{numeric, represents the Kth smallest value from a sample.}
+\item{k}{numeric, represents the k-th smallest value from a sample.}
 
 \item{min}{numeric, represents the lower bound of the support of the distribution.}
 
@@ -34,13 +35,15 @@ order_fellerpareto(
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
-\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of the distribution of the k-th order statistic. Default value is 0.05.}
+\item{p}{numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.}
+
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of the distribution of the k-th order statistic. Default value is 0.05.}
 
 \item{...}{represents others parameters of a Feller-Pareto distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Feller-Pareto Distribution, the value of its join probability density function evaluated in the random sample and
-a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
+A list with a random sample of order statistics from a Feller-Pareto Distribution, the value of its join probability density function evaluated in the random sample
+and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 }
 \description{
 \code{order_fellerpareto} is used to obtain a random sample of the k-th order statistic from a Feller-Pareto distribution and some associated quantities of interest.
@@ -48,7 +51,8 @@ a (1 - alpha) confidence interval for the population median of the distribution 
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Feller-Pareto Distribution
-order_fellerpareto(size=10,min=0.5,shape1=0.75,shape2=1,shape3=1.25,scale=0.5,k=3,n=50,alpha=0.02)
+order_fellerpareto(size=10,
+                   min=0.5,shape1=0.75,shape2=1,shape3=1.25,scale=0.5,k=3,n=50,p=0.5,alpha=0.02)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.

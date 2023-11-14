@@ -7,28 +7,36 @@
 #' @param sigma numeric, represents scale parameter values.
 #' @param nu numeric, represents skewness parameter values
 #' @param tau numeric, represents kurtosis tau parameter values.
-#' @param k numeric, represents the Kth smallest value from a sample.
+#' @param k numeric, represents the K-th smallest value from a sample.
 #' @param n numeric, represents the size of the sample to compute the order statistic from.
-#' @param alpha numeric, (1 - alpha) represents the confidence of an interval for the population median of a Skew student t Distribution.
+#' @param p numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.
+#' @param alpha numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of a Skew student t Distribution.
 #' @param ... represents others parameters of a Skew student t distribution.
-#' @return A list with a random sample of order statistics from a Skew student t Distribution, the value of its join probability density function evaluated in the random sample and
-#' a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
+#' @return A list with a random sample of order statistics from a Skew student t Distribution, the value of its join probability density function evaluated in the random sample
+#' and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 #' @references Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
 #' @references Ribgy, R. and Stasinopoulos, M. (2005) Generalized Additive Models for Location Scale and Shape, Journal of the Royal Statistical Society: Applied Statistics.
 #' @author Carlos Alberto Cardozo Delgado <cardozorpackages@gmail.com>.
 #' @examples
 #' library(orders)
 #' # A sample of size 10 of the 3-th order statistics from a Skew student t Distribution
-#' order_sstudentt(size=10,k=3,mu=0,sigma=1,nu=0,tau=2,n=30,alpha=0.02)
+#' order_sstudentt(size=10,k=3,mu=0,sigma=1,nu=0,tau=2,n=30,p=0.5,alpha=0.02)
 #' @importFrom gamlss.dist qST1 dST1
 #' @importFrom stats rbeta
 #' @export order_sstudentt
 
-order_sstudentt <- function(size,k,mu,sigma,nu,tau,n,alpha=0.05,...){
+order_sstudentt <- function(size,k,mu,sigma,nu,tau,n,p=0.5,alpha=0.05,...){
   sample  <- qST1(initial_order(size,k,n),mu,sigma,nu,tau,...)
   pdf     <- factorial(size)*cumprod(dST1(sample,mu,sigma,nu,tau,...))[size]
+  log_pdf     <- sum(log(2:size)) + sum(log(dST1(sample,mu,sigma,nu,tau,...)))
   if(size>5){
-    return(list(sample=sample,pdf=pdf,ci_median=interval_median(size,sample,alpha)))
+    int_perc_est <- interval_percentile_est(p,size,sample,alpha)
+    return(list(sample = sample,
+                pdf = pdf,
+                log_pdf = log_pdf,
+                point_percentile_est = point_percentile_est(p,size,sample),
+                confidence_percentile_est = int_perc_est[1:2],
+                aprox_coverage_prob = int_perc_est[3]))
   }
   cat("---------------------------------------------------------------------------------------------\n")
   cat("We cannot report the confidence interval. The size of the sample is less or equal than five.\n")

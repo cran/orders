@@ -4,12 +4,12 @@
 \alias{order_sstudentt}
 \title{Random Sampling of k-th Order Statistics from a Skew student t Distribution}
 \usage{
-order_sstudentt(size, k, mu, sigma, nu, tau, n, alpha = 0.05, ...)
+order_sstudentt(size, k, mu, sigma, nu, tau, n, p = 0.5, alpha = 0.05, ...)
 }
 \arguments{
 \item{size}{numeric, represents the size of the sample.}
 
-\item{k}{numeric, represents the Kth smallest value from a sample.}
+\item{k}{numeric, represents the K-th smallest value from a sample.}
 
 \item{mu}{numeric, represents the location parameter values.}
 
@@ -21,13 +21,15 @@ order_sstudentt(size, k, mu, sigma, nu, tau, n, alpha = 0.05, ...)
 
 \item{n}{numeric, represents the size of the sample to compute the order statistic from.}
 
-\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population median of a Skew student t Distribution.}
+\item{p}{numeric, represents the 100p percentile for the distribution of the k-th order statistic. Default value is population median, p = 0.5.}
+
+\item{alpha}{numeric, (1 - alpha) represents the confidence of an interval for the population percentile p of a Skew student t Distribution.}
 
 \item{...}{represents others parameters of a Skew student t distribution.}
 }
 \value{
-A list with a random sample of order statistics from a Skew student t Distribution, the value of its join probability density function evaluated in the random sample and
-a (1 - alpha) confidence interval for the population median of the distribution of the k-th order statistic.
+A list with a random sample of order statistics from a Skew student t Distribution, the value of its join probability density function evaluated in the random sample
+and an approximate (1 - alpha) confidence interval for the population percentile p of the distribution of the k-th order statistic.
 }
 \description{
 \code{order_sstudentt} is used to obtain a random sample of the k-th order statistic from a Skew student t distribution and some associated quantities of interest.
@@ -35,7 +37,7 @@ a (1 - alpha) confidence interval for the population median of the distribution 
 \examples{
 library(orders)
 # A sample of size 10 of the 3-th order statistics from a Skew student t Distribution
-order_sstudentt(size=10,k=3,mu=0,sigma=1,nu=0,tau=2,n=30,alpha=0.02)
+order_sstudentt(size=10,k=3,mu=0,sigma=1,nu=0,tau=2,n=30,p=0.5,alpha=0.02)
 }
 \references{
 Gentle, J, Computational Statistics, First Edition. Springer - Verlag, 2009.
